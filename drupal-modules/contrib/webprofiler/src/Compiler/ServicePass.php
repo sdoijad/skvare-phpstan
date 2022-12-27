@@ -49,7 +49,7 @@ class ServicePass implements CompilerPassInterface {
 
           $inEdges[] = [
             'id' => $edge->getSourceNode()->getId(),
-            'invalidBehavior' => $edgeValue->getInvalidBehavior(),
+            'invalidBehavior' => $edgeValue ? $edgeValue->getInvalidBehavior() : NULL,
           ];
         }
 
@@ -60,7 +60,7 @@ class ServicePass implements CompilerPassInterface {
 
           $outEdges[] = [
             'id' => $edge->getDestNode()->getId(),
-            'invalidBehavior' => $edgeValue->getInvalidBehavior(),
+            'invalidBehavior' => $edgeValue ? $edgeValue->getInvalidBehavior() : NULL,
           ];
         }
       }
