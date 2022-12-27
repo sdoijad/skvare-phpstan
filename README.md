@@ -1,0 +1,1 @@
+# skvare-phpstan
