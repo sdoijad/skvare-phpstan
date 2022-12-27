@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * Contains civicrm_tweaks.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function civicrm_tweaks_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the civicrm_tweaks module.
+    case 'help.page.civicrm_tweaks':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Collection of tweaks improving upon the CiviCRM Core Drupal 8 module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_preprocess_html().
+ *
+ * Add theme suggestions for Seven or Adminimal Theme if path is CiviCRM.
+ */
+function civicrm_tweaks_preprocess_html(&$variables) {
+  $act_for_themes = [
+    'seven',
+    'adminimal_theme',
+    'skvare_custom_theme',
+    'skvare_rdx',
+  ];
+
+  $theme_name = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+  if (in_array($theme_name, $act_for_themes)) {
+    $path_args = explode('/', \Drupal::request()->getPathInfo());
+    $path_args = array_filter($path_args);
+    if (!empty($path_args['1']) && $path_args['1'] == 'civicrm') {
+      if ($suggestions = theme_get_suggestions($path_args, 'page', '-')) {
+        foreach ($suggestions as $suggestion) {
+          $variables['attributes']['class'][] = $suggestion;
+        }
+      }
+    }
+  }
+}

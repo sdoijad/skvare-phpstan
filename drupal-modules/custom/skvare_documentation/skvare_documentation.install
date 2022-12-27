@@ -1,0 +1,69 @@
+<?php
+
+/**
+ * @file
+ * Install tasks for skvare_documentation.
+ */
+
+use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\user\Entity\Role;
+
+/**
+ * Implements hook_install().
+ */
+function skvare_documentation_install() {
+  // Create a 'General' term.
+  $term = Term::create([
+    'name' => 'General',
+    'vid' => 'documentation_categories',
+  ]);
+  $term->save();
+  $tid = $term->id();
+
+  // Create a 'How to Create Documentation" Node.
+  $node = Node::create([
+    'type' => 'documentation_articles',
+    'uid' => 1,
+    'revision' => 0,
+    'status' => TRUE,
+    'promote' => 0,
+    'sticky' => 1,
+    'created' => time(),
+    'langcode' => 'en',
+    'title' => 'How to Create Documentation',
+  ]);
+
+  $node->set('body', [
+    'summary' => '<p>Learn how to create new Documentation and use the WYSIWYG editor.</p>',
+    'value' => '<p>Documentation can only be created or modified by users with the role Administrator.</p>
+<ol>
+    <li>In the Drupal admin menu, go to&nbsp;<em>Documentation &gt; Add Documentation</em></li>
+    <li>Enter a&nbsp;<strong>Title</strong>&nbsp;that briefly describes the document</li>
+    <li>Enter a&nbsp;<strong>Document Summary</strong> to provide a brief description about the article</li>
+    <li>Type your content in the <strong>Body</strong> field and use the formatting tools as needed</li>
+    <li>Enter a&nbsp;<strong>Documentation Category</strong>&nbsp;to tag an article category. Multiple tags should be separated by a comma. Please re-use existing categories when possible.</li>
+    <li>Click the&nbsp;<strong>Save&nbsp;</strong>button when finished.</li>
+</ol>
+<h3>Inserting Links</h3>
+<ol>
+    <li>Highlight the text you want to link</li>
+    <li>Click the&nbsp;<strong>Link</strong>&nbsp;icon in the editor&nbsp;</li>
+    <li>Change the&nbsp;<strong>Link Type</strong>&nbsp;to&nbsp;<strong>URL</strong></li>
+    <li>Paste the link in the <strong>URL field</strong></li>
+    <li>Click<strong> OK</strong></li>
+    <li>If you want to edit or remove the link, right click on the link and choose either&nbsp;<strong>Edit Link</strong>&nbsp;or&nbsp;<strong>Unlink</strong></li>
+</ol>',
+    'format' => 'full_html_private',
+  ]);
+
+  $node->set('field_documentation_category', [
+    'target_id' => $tid,
+  ]);
+
+  $node->save();
+
+  // Give Administrator role,Documentation Articles:View any content permission.
+  $administrator = Role::load('administrator');
+  $administrator->grantPermission('view any documentation_articles content');
+}

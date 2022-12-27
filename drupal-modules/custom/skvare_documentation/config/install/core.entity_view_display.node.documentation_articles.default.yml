@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.documentation_articles.body
+    - field.field.node.documentation_articles.field_documentation_category
+    - node.type.documentation_articles
+  module:
+    - text
+    - user
+id: node.documentation_articles.default
+targetEntityType: node
+bundle: documentation_articles
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_documentation_category:
+    weight: 1
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

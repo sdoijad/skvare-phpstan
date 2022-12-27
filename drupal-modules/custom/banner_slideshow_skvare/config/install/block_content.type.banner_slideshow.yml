@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: banner_slideshow
+label: 'Banner Slideshow'
+revision: 0
+description: 'Banner Slideshow block type'

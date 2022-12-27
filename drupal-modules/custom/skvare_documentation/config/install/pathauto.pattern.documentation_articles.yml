@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: documentation_articles
+label: 'Documentation Articles'
+type: 'canonical_entities:node'
+pattern: 'documentation/[node:title]'
+selection_criteria:
+  0f8336d3-0988-4240-91dc-77f79bfabb87:
+    id: node_type
+    bundles:
+      documentation_articles: documentation_articles
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 0f8336d3-0988-4240-91dc-77f79bfabb87
+selection_logic: and
+weight: -5
+relationships: {  }

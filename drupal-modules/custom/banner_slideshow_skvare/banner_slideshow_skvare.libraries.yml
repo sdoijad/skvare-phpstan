@@ -1,0 +1,5 @@
+banner-slideshow:
+  version: 1.x
+  css:
+    theme:
+      css/banner-slideshow-skvare.css: {}

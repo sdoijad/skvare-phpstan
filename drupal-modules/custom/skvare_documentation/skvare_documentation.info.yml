@@ -1,0 +1,16 @@
+name: 'Skvare Documentation'
+type: module
+description: 'Module providing standard Skvare documentation functionality'
+core: 8.x
+core_version_requirement: '^8 || ^9'
+package: 'Skvare components'
+dependencies:
+  - node
+  - field
+  - text
+  - editor
+  - ckeditor
+  - media
+  - views
+  - pathauto
+  - node_view_permissions

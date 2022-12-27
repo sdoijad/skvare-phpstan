@@ -1,0 +1,20 @@
+name: 'Banner Slideshow Skvare'
+description: 'Provide Banner Slideshow block type with standard configuration and functionality'
+type: module
+core: 8.x
+core_version_requirement: '^8 || ^9'
+package: Skvare components
+dependencies:
+  - field
+  - file
+  - flexslider
+  - flexslider_fields
+  - image
+  - block
+  - system
+  - media
+  - media_library
+  - image_effects
+  - responsive_image
+  - entity_browser
+  - views

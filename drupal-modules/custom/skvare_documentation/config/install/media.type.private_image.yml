@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+id: private_image
+label: 'Private Image'
+description: 'Use images stored in private files directory'
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_image_2
+field_map:
+  name: name

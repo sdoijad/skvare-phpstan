@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+name: banner_slideshow_mobile
+label: 'Banner Slideshow Mobile'
+effects:
+  8b382336-f8c0-4700-9c28-0acc8a4ad6a3:
+    uuid: 8b382336-f8c0-4700-9c28-0acc8a4ad6a3
+    id: image_effects_scale_and_smart_crop
+    weight: 1
+    data:
+      width: '640'
+      height: '200'
+      upscale: false
+      simulate: false
+      algorithm: entropy_slice

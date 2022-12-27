@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Documentation Categories'
+vid: documentation_categories
+description: 'Categories that can be associated to documentation articles'
+weight: 0

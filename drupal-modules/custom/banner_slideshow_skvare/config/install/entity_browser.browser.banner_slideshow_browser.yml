@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.banner_slideshow_entity_browser_widget_listing
+  module:
+    - entity_browser_entity_form
+    - views
+name: banner_slideshow_browser
+label: 'Banner Slideshow Browser'
+display: modal
+display_configuration:
+  width: '960'
+  height: '500'
+  link_text: 'Select slideshow image'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  430b9e64-8405-479e-bca5-acee3e306f82:
+    settings:
+      entity_type: media
+      bundle: slideshow_image
+      form_mode: media_library
+      submit_text: 'Save slideshow image'
+    uuid: 430b9e64-8405-479e-bca5-acee3e306f82
+    weight: -9
+    label: 'Create Slideshow Image'
+    id: entity_form
+  d8353e19-5296-44b3-bdbf-c25632594ff1:
+    settings:
+      view: banner_slideshow_entity_browser_widget_listing
+      view_display: entity_browser_1
+      submit_text: 'Select slides'
+      auto_select: false
+    uuid: d8353e19-5296-44b3-bdbf-c25632594ff1
+    weight: -10
+    label: Slides
+    id: view

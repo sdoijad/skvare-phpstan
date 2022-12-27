@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.banner_slideshow_full
+    - image.style.banner_slideshow_mobile
+    - image.style.banner_slideshow_tablet
+id: banner_slideshow
+label: 'Banner Slideshow'
+image_style_mappings:
+  -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - banner_slideshow_full
+        - banner_slideshow_mobile
+        - banner_slideshow_tablet
+breakpoint_group: responsive_image
+fallback_image_style: '_original image_'

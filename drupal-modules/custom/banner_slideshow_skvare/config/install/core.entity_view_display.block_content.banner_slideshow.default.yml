@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.banner_slideshow
+    - field.field.block_content.banner_slideshow.field_slideshow_images
+    - flexslider.optionset.banner_slideshow
+  module:
+    - banner_slideshow_skvare
+    - field_formatter_class
+id: block_content.banner_slideshow.default
+targetEntityType: block_content
+bundle: banner_slideshow
+mode: default
+content:
+  field_slideshow_images:
+    type: flexslider_media_sk
+    weight: 0
+    label: hidden
+    settings:
+      optionset: banner_slideshow
+      caption: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    region: content
+hidden: {  }

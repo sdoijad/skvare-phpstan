@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.documentation_articles.body
+    - field.field.node.documentation_articles.field_documentation_category
+    - node.type.documentation_articles
+  module:
+    - text
+    - user
+id: node.documentation_articles.teaser
+targetEntityType: node
+bundle: documentation_articles
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_documentation_category: true

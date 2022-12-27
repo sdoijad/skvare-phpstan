@@ -1,0 +1,11 @@
+{
+    "name": "drupal/email_verification",
+    "type": "drupal-module",
+    "description": "Verify User Emails before registration",
+    "homepage": "https://www.drupal.org/project/email_verification",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/email_verification",
+        "source": "https://github.com/skvare/email_verification"
+    }
+}

@@ -1,0 +1,12 @@
+name: 'Email Verification'
+type: module
+description: 'Verify User Emails before creating account.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Custom'
+configure: email_verification.settings
+
+# Information added by Drupal.org packaging script on 2021-09-30
+version: '8.x-1.0'
+project: 'email_verification'
+datestamp: 1633024463

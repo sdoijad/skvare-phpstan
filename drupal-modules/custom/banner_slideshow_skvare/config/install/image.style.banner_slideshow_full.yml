@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+name: banner_slideshow_full
+label: 'Banner Slideshow Full'
+effects:
+  392a6ca3-95da-4c04-bca0-49281fd4a159:
+    uuid: 392a6ca3-95da-4c04-bca0-49281fd4a159
+    id: image_effects_scale_and_smart_crop
+    weight: 2
+    data:
+      width: '1920'
+      height: '600'
+      upscale: false
+      simulate: false
+      algorithm: entropy_slice

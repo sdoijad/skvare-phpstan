@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_documentation_category
+    - node.type.documentation_articles
+    - taxonomy.vocabulary.documentation_categories
+id: node.documentation_articles.field_documentation_category
+field_name: field_documentation_category
+entity_type: node
+bundle: documentation_articles
+label: 'Documentation Category'
+description: 'Enter a term to tag an article category. Multiple tags should be separated by a comma. Please re-use existing categories when possible.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      documentation_categories: documentation_categories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

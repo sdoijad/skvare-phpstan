@@ -1,0 +1,27 @@
+{
+    "name": "drupal/fitvids",
+    "description": "FitVids is a Drupal module to include a jQuery plugin for fluid width video embeds.",
+    "type": "drupal-module",
+    "homepage": "https://www.drupal.org/project/fitvids",
+    "authors": [
+        {
+            "name": "Nick Dickinson-Wilde",
+            "homepage": "https://www.drupal.org/u/nickdickinsonwilde",
+            "role": "Maintainer"
+        },
+        {
+            "name": "Derek Ahmedzai",
+            "homepage": "https://www.drupal.org/u/derekahmedzai",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/fitvids",
+        "source": "https://cgit.drupalcode.org/fitvids"
+    },
+    "license": "GPL-2.0+",
+    "minimum-stability": "dev",
+    "require": {
+        "uninhabited/fitvids.js": "dev-composer"
+    }
+}

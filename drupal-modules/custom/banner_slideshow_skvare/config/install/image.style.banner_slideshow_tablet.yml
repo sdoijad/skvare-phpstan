@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+name: banner_slideshow_tablet
+label: 'Banner Slideshow Tablet'
+effects:
+  748d1d99-8537-4443-a100-2ceaa264912e:
+    uuid: 748d1d99-8537-4443-a100-2ceaa264912e
+    id: image_effects_scale_and_smart_crop
+    weight: 1
+    data:
+      width: '1024'
+      height: '400'
+      upscale: false
+      simulate: false
+      algorithm: entropy_slice

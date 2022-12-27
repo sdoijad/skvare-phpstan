@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.slideshow_image.field_media_image_1
+    - field.field.media.slideshow_image.field_overlay_text
+    - media.type.slideshow_image
+  module:
+    - image
+    - text
+id: media.slideshow_image.default
+targetEntityType: media
+bundle: slideshow_image
+mode: default
+content:
+  field_media_image_1:
+    label: hidden
+    weight: 0
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_overlay_text:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true
